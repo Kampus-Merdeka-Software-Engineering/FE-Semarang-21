@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Pengiriman</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <section id="header">
+        <a href="#"><img src="images/Group 3.png" class="logo" alt="" width="150px"></a>
+
+        <div>
+            <ul id="navbar">
+                <li><a class="active" href="index.html">Home</a></li>
+                <li><a href="#order">Order</a></li>
+                <li><a href="about.html">Team</a></li>
+                <li><a href=""><i class="fa-solid fa-truck-fast"></i></a></li>
+                
+            </ul>
+        </div>
+    </section>
+
+    <section id="hero">
+        <h1>WELCOME</h1>
+        <h2>WEB SHIPPING GRUP 21</h2>
+    </section>
+
+    <section id="info" class="section-p1">
+      
+        <div class="fe-box">
+            <img src="images/isi f.png" alt="">
+            <h3>Mengisi Form </h3>
+        </div>
+        <div class="fe-box">
+            <img src="images/pem1.png" alt="">
+            <h3>Pembayaran</h3>
+        </div>
+        <div class="fe-box">
+            <img class="foto" src="images/h cs.png" alt="">
+            <h3>Hubungi CS</h3>
+        </div>
+        <div class="fe-box">
+            <img src="images/1.1 rv.png" alt="">
+            <h3>Penjemputan</h3>
+        </div>
+        <div class="fe-box">
+            <img src="images/paket.1.png" alt="">
+            <h3>Dikirim</h3>
+        </div>
+        <div class="ser">
+            <h1>PROSES PENGIRIMAN PAKET</h1>
+        </div>
+
+    </section>
+
+    <section id="swiper">
+        <div class="jt_index_2_list pos_r">
+                <div class="jn">
+                    <img src="images/item1.png" alt="" >
+                    <img src="images/index2_item2.png" alt="" >
+                    <img src="images/index2_item3.png" alt="" >
+                    <img src="images/index2_item4.png" alt="" >
+                    <img src="images/index2_item5.png" alt="" >
+                </div>
+        </div>
+    </section><br>
+
+    <div id="order"></div>
+
+        <h1>Informasi Pengiriman</h1>
+<form id="formPengiriman">
+    <!-- Formulir pengirim -->
+    <h2>Informasi Pengirim</h2>
+
+    <label for="nama">Nama Pengirim:</label>
+    <input type="text" id="nama" required><br><br>
+
+    <label for="alamat">Alamat Pengirim:</label>
+    <input type="text" id="alamat" required><br><br>
+
+    <label for="kota">Kota Pengirim:</label>
+    <select id="kota" required>
+        <option value="Jakarta">Jakarta</option>
+        <option value="Surabaya">Surabaya</option>
+        <option value="Bandung">Bandung</option>
+        <!-- Tambahkan pilihan kota lain sesuai kebutuhan -->
+    </select><br><br>
+
+    <label for="provinsi">Provinsi Pengirim:</label>
+    <select id="provinsi" required>
+        <option value="DKI Jakarta">DKI Jakarta</option>
+        <option value="Jawa Timur">Jawa Timur</option>
+        <option value="Jawa Barat">Jawa Barat</option>
+        <!-- Tambahkan pilihan provinsi lain sesuai kebutuhan -->
+    </select><br><br>
+
+    <label for="kodepos">Kode Pos Pengirim:</label>
+    <input type="text" id="kodepos" required pattern="\d{5}"><br><br>
+
+
+    <!-- Formulir penerima -->
+    <h2>Informasi Penerima</h2>
+
+    <label for="namaPenerima">Nama Penerima:</label>
+    <input type="text" id="namaPenerima" required><br><br>
+
+    <label for="alamatPenerima">Alamat Penerima:</label>
+    <input type="text" id="alamatPenerima" required><br><br>
+
+    <label for="kotaPenerima">Kota Penerima:</label>
+    <select id="kotaPenerima" required>
+        <option value="Jakarta">Jakarta</option>
+        <option value="Surabaya">Surabaya</option>
+        <option value="Bandung">Bandung</option>
+        <!-- Tambahkan pilihan kota lain sesuai kebutuhan -->
+    </select><br><br>
+
+    <label for="provinsiPenerima">Provinsi Penerima:</label>
+    <select id="provinsiPenerima" required>
+        <option value="DKI Jakarta">DKI Jakarta</option>
+        <option value="Jawa Timur">Jawa Timur</option>
+        <option value="Jawa Barat">Jawa Barat</option>
+        <!-- Tambahkan pilihan provinsi lain sesuai kebutuhan -->
+    </select><br><br>
+
+    <label for="kodeposPenerima">Kode Pos Penerima:</label>
+    <input type="text" id="kodeposPenerima" required pattern="\d{5}"><br><br>
+
+    <label for="tanggal">Tanggal:</label>
+    <input type="date" id="tanggal" required><br><br>
+
+    <label for="berat">Berat (kg):</label>
+    <input type="number" id="berat" step="0.1" required><br><br>
+
+    <h2>Total Harga:</h2>
+    <p id="totalHarga">-</p>
+
+
+    <input type="submit" value="Kirim">
+</form>
+
+        <section id="trup" class="section-p1">
+            <div>
+                <h3>
+                    PEMBAYARAN PAKET HANYA MELALUI TRANSFER KE : BCA 3300787575 an YUDISTHIRA WIGAR ADINATA *Hati2 terhadap orang2 yang mengaku pihak admin WEPAKET! / transfer ke selain rekening tersebut !
+                </h3>
+            </div>
+        </section>
+
+    </div>
+
+    <div id="formCariNama">
+        <h2>Cari Data Pengiriman Berdasarkan Nama Penerima</h2>
+        <label for="cariNamaPenerima">Nama Penerima:</label>
+        <input type="text" id="cariNamaPenerima">
+        <button id="btnCari">Cari</button>
+    </div><br>
+
+     <!-- Tabel Data Pengiriman -->
+     <h1>Data Pengiriman</h1><br>
+     <table id="tablePengiriman">
+         <thead>
+             <tr>
+                 <th>ID</th>
+                 <th>Nama Pengirim</th>
+                 <th>Alamat Pengirim</th>
+                 <th>Kota Pengirim</th>
+                 <th>Provinsi Pengirim</th>
+                 <th>Kode Pos Pengirim</th>
+                 <th>Nama Penerima</th>
+                 <th>Alamat Penerima</th>
+                 <th>Kota Penerima</th>
+                 <th>Provinsi Penerima</th>
+                 <th>Kode Pos Penerima</th>
+                 <th>Tanggal</th>
+                 <th>Berat</th>
+                 <th>Total Harga</th>
+             </tr>
+         </thead>
+         <tbody>
+             <!-- Data akan diisi oleh JavaScript -->
+         </tbody>
+     </table>
+
+    
+    <section id="banner" class="section-m1">
+        <h4>Services</h4>
+        <h2>up tp <span>70% off</span>-All for all deliveries</h2>
+    </section>
+
+    <footer class="section-p1">
+        <div class="col">
+            <!-- <img class="logo" src="images/Logo.2.png" alt=""> -->
+            <h4>Contact</h4>
+            <p><strong>Address:</strong> Jln.Delima V No 123, Jakarta</p>
+            <p><strong>Phone:</strong> 0812 4442 2221 /(+62) 12 4442 2221</p>
+            <p><strong>Hours:</strong> 08.00 - 15.00, Mon - Sat</p>
+            <div class="follow">
+                <h4>Follow Us</h4>
+                <div class="icon">
+                    <i class="fa-brands fa-facebook-f fa-lg"></i>
+                    <i class="fa-brands fa-twitter fa-xl"></i>
+                    <i class="fa-brands fa-instagram fa-lg"></i>
+                    <i class="fa-brands fa-youtube fa-lg"></i>
+                </div>
+            </div>
+        </div>
+
+        <div class="col">
+            <h4>About</h4>
+            <a href="#">Profile</a>
+            <a href="#">News & Events</a>
+            <a href="#">Help</a>
+            <a href="#">Find Drop Point</a>
+            <a href="#">Privacy Policy</a>
+        </div>
+
+        <div class="col">
+            <h4>Information</h4>
+            <a href="#">Trace &  Track</a>
+            <a href="#">Information Shiping Rates</a>
+            <a href="#">Delivery Information</a>
+            <a href="#">Terms & Conditions</a>
+            <a href="#">FAQ</a>
+        </div>
+
+        <div class="col instal">
+            <h4>Instal App</h4>
+            <p>From App Store or Google Play</p>
+            <div class="row">
+                <img src="images/app.jpg" alt="">
+                <img src="images/play.jpg" alt="">
+            </div>
+            <p>Secured Payment Gateways</p>
+            <img src="images/pay.png" alt="">
+
+        </div>
+
+    </footer>
+
+    <script src="index.js"></script>
+</body>
+</html>
