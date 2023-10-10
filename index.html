@@ -11,7 +11,6 @@
 <body>
     <section id="header">
         <a href="#"><img src="images/Group 3.png" class="logo" alt="" width="150px"></a>
-
         <div>
             <ul id="navbar">
                 <li><a class="active" href="index.html">Home</a></li>
@@ -29,7 +28,6 @@
     </section>
 
     <section id="info" class="section-p1">
-      
         <div class="fe-box">
             <img src="images/isi f.png" alt="">
             <h3>Mengisi Form </h3>
@@ -53,7 +51,6 @@
         <div class="ser">
             <h1>PROSES PENGIRIMAN PAKET</h1>
         </div>
-
     </section>
 
     <section id="swiper">
@@ -69,7 +66,6 @@
     </section><br>
 
     <div id="order"></div>
-
         <h1>Informasi Pengiriman</h1>
         <form id="formPengiriman">
             <!-- Formulir pengirim -->
@@ -140,6 +136,7 @@
         
             <input type="submit" value="Kirim">
         </form>
+        
 
         <section id="trup" class="section-p1">
             <div>
@@ -150,40 +147,54 @@
         </section>
 
     </div>
+    <form id="pengirimanCek">
+        <!-- Formulir pencarian data pengiriman -->
+        <h2>Cari Data Pengiriman</h2>
+        <label for="idPengiriman">ID Pengiriman:</label>
+        <input type="text" id="idPengiriman">
+        <button type="submit">Cari</button>
+    </form>
 
-    <div id="formCariNama">
-        <h2>Cari Data Pengiriman Berdasarkan Nama Penerima</h2>
-        <label for="cariNamaPenerima">Nama Penerima:</label>
-        <input type="text" id="cariNamaPenerima">
-        <button id="btnCari">Cari</button>
-    </div><br>
+    <!-- Formulir untuk menampilkan data pengiriman -->
+    <form id="formTampilData" style="display: none;">
+        <h2>Data Pengiriman</h2>
 
-     <!-- Tabel Data Pengiriman -->
-     <h1>Data Pengiriman</h1><br>
-     <table id="tablePengiriman">
-         <thead>
-             <tr>
-                 <th>ID</th>
-                 <th>Nama Pengirim</th>
-                 <th>Alamat Pengirim</th>
-                 <th>Kota Pengirim</th>
-                 <th>Provinsi Pengirim</th>
-                 <th>Kode Pos Pengirim</th>
-                 <th>Nama Penerima</th>
-                 <th>Alamat Penerima</th>
-                 <th>Kota Penerima</th>
-                 <th>Provinsi Penerima</th>
-                 <th>Kode Pos Penerima</th>
-                 <th>Tanggal</th>
-                 <th>Berat</th>
-                 <th>Total Harga</th>
-             </tr>
-         </thead>
-         <tbody>
-             <!-- Data akan diisi oleh JavaScript -->
-         </tbody>
-     </table>
+        <label for="nama">Nama:</label>
+        <input type="text" id="nama" readonly><br><br>
 
+        <label for="alamat">Alamat:</label>
+        <input type="text" id="alamat" readonly><br><br>
+
+        <label for="kota">Kota:</label>
+        <input type="text" id="kota" readonly><br><br>
+
+        <label for="provinsi">Provinsi:</label>
+        <input type="text" id="provinsi" readonly><br><br>
+
+        <label for="kodepos">Kode Pos:</label>
+        <input type="text" id="kodepos" readonly><br><br>
+
+        <label for="namapenerima">Nama Penerima:</label>
+        <input type="text" id="namapenerima" readonly><br><br>
+
+        <label for="alamatpenerima">Alamat Penerima:</label>
+        <input type="text" id="alamatpenerima" readonly><br><br>
+
+        <label for="kotapenerima">Kota Penerima:</label>
+        <input type="text" id="kotapenerima" readonly><br><br>
+
+        <label for="provinsipenerima">Provinsi Penerima:</label>
+        <input type="text" id="provinsipenerima" readonly><br><br>
+
+        <label for="kodepospenerima">Kode Pos Penerima:</label>
+        <input type="text" id="kodepospenerima" readonly><br><br>
+
+        <label for="tanggal">Tanggal:</label>
+        <input type="text" id="tanggal" readonly><br><br>
+
+        <label for="berat">Berat:</label>
+        <input type="text" id="berat" readonly><br><br>
+    </form>
     
     <section id="banner" class="section-m1">
         <h4>Services</h4>
@@ -316,5 +327,6 @@
     }
 
     </script>
+
 </body>
 </html>
