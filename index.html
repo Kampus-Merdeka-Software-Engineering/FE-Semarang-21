@@ -71,76 +71,75 @@
     <div id="order"></div>
 
         <h1>Informasi Pengiriman</h1>
-<form id="formPengiriman">
-    <!-- Formulir pengirim -->
-    <h2>Informasi Pengirim</h2>
-
-    <label for="nama">Nama Pengirim:</label>
-    <input type="text" id="nama" required><br><br>
-
-    <label for="alamat">Alamat Pengirim:</label>
-    <input type="text" id="alamat" required><br><br>
-
-    <label for="kota">Kota Pengirim:</label>
-    <select id="kota" required>
-        <option value="Jakarta">Jakarta</option>
-        <option value="Surabaya">Surabaya</option>
-        <option value="Bandung">Bandung</option>
-        <!-- Tambahkan pilihan kota lain sesuai kebutuhan -->
-    </select><br><br>
-
-    <label for="provinsi">Provinsi Pengirim:</label>
-    <select id="provinsi" required>
-        <option value="DKI Jakarta">DKI Jakarta</option>
-        <option value="Jawa Timur">Jawa Timur</option>
-        <option value="Jawa Barat">Jawa Barat</option>
-        <!-- Tambahkan pilihan provinsi lain sesuai kebutuhan -->
-    </select><br><br>
-
-    <label for="kodepos">Kode Pos Pengirim:</label>
-    <input type="text" id="kodepos" required pattern="\d{5}"><br><br>
-
-
-    <!-- Formulir penerima -->
-    <h2>Informasi Penerima</h2>
-
-    <label for="namaPenerima">Nama Penerima:</label>
-    <input type="text" id="namaPenerima" required><br><br>
-
-    <label for="alamatPenerima">Alamat Penerima:</label>
-    <input type="text" id="alamatPenerima" required><br><br>
-
-    <label for="kotaPenerima">Kota Penerima:</label>
-    <select id="kotaPenerima" required>
-        <option value="Jakarta">Jakarta</option>
-        <option value="Surabaya">Surabaya</option>
-        <option value="Bandung">Bandung</option>
-        <!-- Tambahkan pilihan kota lain sesuai kebutuhan -->
-    </select><br><br>
-
-    <label for="provinsiPenerima">Provinsi Penerima:</label>
-    <select id="provinsiPenerima" required>
-        <option value="DKI Jakarta">DKI Jakarta</option>
-        <option value="Jawa Timur">Jawa Timur</option>
-        <option value="Jawa Barat">Jawa Barat</option>
-        <!-- Tambahkan pilihan provinsi lain sesuai kebutuhan -->
-    </select><br><br>
-
-    <label for="kodeposPenerima">Kode Pos Penerima:</label>
-    <input type="text" id="kodeposPenerima" required pattern="\d{5}"><br><br>
-
-    <label for="tanggal">Tanggal:</label>
-    <input type="date" id="tanggal" required><br><br>
-
-    <label for="berat">Berat (kg):</label>
-    <input type="number" id="berat" step="0.1" required><br><br>
-
-    <h2>Total Harga:</h2>
-    <p id="totalHarga">-</p>
-
-
-    <input type="submit" value="Kirim">
-</form>
+        <form id="formPengiriman">
+            <!-- Formulir pengirim -->
+            <h2>Informasi Pengirim</h2>
+        
+            <label for="nama">Nama Pengirim:</label>
+            <input type="text" id="nama" name="nama" required><br><br>
+        
+            <label for="alamat">Alamat Pengirim:</label>
+            <input type="text" id="alamat" name="alamat" required><br><br>
+        
+            <label for="kota">Kota Pengirim:</label>
+            <select id="kota" name="kota" required>
+                <option value="Jakarta">Jakarta</option>
+                <option value="Surabaya">Surabaya</option>
+                <option value="Bandung">Bandung</option>
+                <!-- Tambahkan pilihan kota lain sesuai kebutuhan -->
+            </select><br><br>
+        
+            <label for="provinsi">Provinsi Pengirim:</label>
+            <select id="provinsi" name="provinsi" required>
+                <option value="DKI Jakarta">DKI Jakarta</option>
+                <option value="Jawa Timur">Jawa Timur</option>
+                <option value="Jawa Barat">Jawa Barat</option>
+                <!-- Tambahkan pilihan provinsi lain sesuai kebutuhan -->
+            </select><br><br>
+        
+            <label for="kodepos">Kode Pos Pengirim:</label>
+            <input type="text" id="kodepos" name="kodepos" required pattern="\d{5}"><br><br>
+        
+        
+            <!-- Formulir penerima -->
+            <h2>Informasi Penerima</h2>
+        
+            <label for="namaPenerima">Nama Penerima:</label>
+            <input type="text" id="namaPenerima" name="namapenerima" required><br><br>
+        
+            <label for="alamatPenerima">Alamat Penerima:</label>
+            <input type="text" id="alamatPenerima" name="alamatpenerima" required><br><br>
+        
+            <label for="kotaPenerima">Kota Penerima:</label>
+            <select id="kotaPenerima" name="kotapenerima" required>
+                <option value="Jakarta">Jakarta</option>
+                <option value="Surabaya">Surabaya</option>
+                <option value="Bandung">Bandung</option>
+                <!-- Tambahkan pilihan kota lain sesuai kebutuhan -->
+            </select><br><br>
+        
+            <label for="provinsiPenerima">Provinsi Penerima:</label>
+            <select id="provinsiPenerima" name="provinsipenerima" required>
+                <option value="DKI Jakarta">DKI Jakarta</option>
+                <option value="Jawa Timur">Jawa Timur</option>
+                <option value="Jawa Barat">Jawa Barat</option>
+                <!-- Tambahkan pilihan provinsi lain sesuai kebutuhan -->
+            </select><br><br>
+        
+            <label for="kodeposPenerima">Kode Pos Penerima:</label>
+            <input type="text" id="kodeposPenerima" name="kodepospenerima" required pattern="\d{5}"><br><br>
+        
+            <label for="tanggal">Tanggal:</label>
+            <input type="date" id="tanggal" name="tanggal" required><br><br>
+        
+            <label for="berat">Berat (kg):</label>
+            <input type="number" id="berat" name="berat" step="0.1" required><br><br>
+        
+            <h2>Total Harga:</h2>
+            <p id="totalHarga">-</p>
+        
+            <input type="submit" value="Kirim">
+        </form>
 
         <section id="trup" class="section-p1">
             <div>
@@ -242,5 +241,80 @@
     </footer>
 
     <script src="index.js"></script>
+    <!-- INI FUNGSI POST KE API -->
+    <script>
+        document.getElementById("formPengiriman").addEventListener("submit", function(event) {
+            event.preventDefault();
+
+            var data = {
+                "nama": document.getElementById("nama").value,
+                "alamat": document.getElementById("alamat").value,
+                "kota": document.getElementById("kota").value,
+                "provinsi": document.getElementById("provinsi").value,
+                "kodepos": document.getElementById("kodepos").value,
+                "namapenerima": document.getElementById("namaPenerima").value,
+                "alamatpenerima": document.getElementById("alamatPenerima").value,
+                "kotapenerima": document.getElementById("kotaPenerima").value,
+                "provinsipenerima": document.getElementById("provinsiPenerima").value,
+                "kodepospenerima": document.getElementById("kodeposPenerima").value,
+                "tanggal": document.getElementById("tanggal").value,
+                "berat": parseFloat(document.getElementById("berat").value)
+            };
+            fetch('http://localhost:3000/api/pengiriman', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(data)
+            })
+            .then(function(response) {
+                if (response.status === 201) {
+
+                    alert('Data berhasil dikirim ke server.');
+                } else {
+                    alert('Gagal mengirim data ke server.');
+                }
+            })
+            .catch(function(error) {
+                console.error('Terjadi kesalahan:', error);
+            });
+        });
+    </script>
+
+    <script>
+        async function pengirimanCek(event) {
+        event.preventDefault();
+        const idPengiriman = document.getElementById("idPengiriman").value;
+        const apiUrl = `http://localhost:3000/api/pengiriman/${idPengiriman}`;
+
+        try {
+            const response = await fetch(apiUrl);
+            const dataPengiriman = await response.json();
+            if (response.status === 200 && dataPengiriman) {
+                document.getElementById("nama").value = dataPengiriman.nama;
+                document.getElementById("alamat").value = dataPengiriman.alamat;
+                document.getElementById("kota").value = dataPengiriman.kota;
+                document.getElementById("provinsi").value = dataPengiriman.provinsi;
+                document.getElementById("kodepos").value = dataPengiriman.kodepos;
+                document.getElementById("namapenerima").value = dataPengiriman.namapenerima;
+                document.getElementById("alamatpenerima").value = dataPengiriman.alamatpenerima;
+                document.getElementById("kotapenerima").value = dataPengiriman.kotapenerima;
+                document.getElementById("provinsipenerima").value = dataPengiriman.provinsipenerima;
+                document.getElementById("kodepospenerima").value = dataPengiriman.kodepospenerima;
+                document.getElementById("tanggal").value = dataPengiriman.tanggal;
+                document.getElementById("berat").value = dataPengiriman.berat;
+
+                document.getElementById("formTampilData").style.display = "block";
+            } else {
+                console.error("Data pengiriman tidak ditemukan atau terjadi kesalahan.");
+                alert("Data pengiriman tidak ditemukan atau terjadi kesalahan.");
+            }
+        } catch (error) {
+            console.error("Kesalahan saat mengambil data pengiriman:", error);
+            alert("Kesalahan saat mengambil data pengiriman.");
+        }
+    }
+
+    </script>
 </body>
 </html>
