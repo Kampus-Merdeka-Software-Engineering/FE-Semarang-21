@@ -147,54 +147,45 @@
         </section>
 
     </div>
-    <form id="pengirimanCek">
-        <!-- Formulir pencarian data pengiriman -->
-        <h2>Cari Data Pengiriman</h2>
-        <label for="idPengiriman">ID Pengiriman:</label>
-        <input type="text" id="idPengiriman">
-        <button type="submit">Cari</button>
-    </form>
+    
+    <section id="newsletter" class="section-p1 section-m1">
+        <div class="newstext">
+            <h4>Cari Nama </h4>
+            <p>Cari Data Pengiriman Berdasarkan Nama Penerima</p>
+        </div>
+        <div class="form">
+            <input type="text" id="searchInput" placeholder="Cari berdasarkan Nama Pengirim">
+            <button onclick="searchByName()">Cari</button>
 
-    <!-- Formulir untuk menampilkan data pengiriman -->
-    <form id="formTampilData" style="display: none;">
-        <h2>Data Pengiriman</h2>
 
-        <label for="nama">Nama:</label>
-        <input type="text" id="nama" readonly><br><br>
+        </div>
+    </section>
+    
 
-        <label for="alamat">Alamat:</label>
-        <input type="text" id="alamat" readonly><br><br>
+    <table id="dataPengiriman" border="1">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nama Pengirim</th>
+                <th>Alamat Pengirim</th>
+                <th>Kota Pengirim</th>
+                <th>Provinsi Pengirim</th>
+                <th>Kode Pos Pengirim</th>
+                <th>Nama Penerima</th>
+                <th>Alamat Penerima</th>
+                <th>Kota Penerima</th>
+                <th>Provinsi Penerima</th>
+                <th>Kode Pos Penerima</th>
+                <th>Tanggal</th>
+                <th>Berat (kg)</th>
+            </tr>
+        </thead>
+        <tbody>
+        </tbody>
+    </table>
 
-        <label for="kota">Kota:</label>
-        <input type="text" id="kota" readonly><br><br>
+    
 
-        <label for="provinsi">Provinsi:</label>
-        <input type="text" id="provinsi" readonly><br><br>
-
-        <label for="kodepos">Kode Pos:</label>
-        <input type="text" id="kodepos" readonly><br><br>
-
-        <label for="namapenerima">Nama Penerima:</label>
-        <input type="text" id="namapenerima" readonly><br><br>
-
-        <label for="alamatpenerima">Alamat Penerima:</label>
-        <input type="text" id="alamatpenerima" readonly><br><br>
-
-        <label for="kotapenerima">Kota Penerima:</label>
-        <input type="text" id="kotapenerima" readonly><br><br>
-
-        <label for="provinsipenerima">Provinsi Penerima:</label>
-        <input type="text" id="provinsipenerima" readonly><br><br>
-
-        <label for="kodepospenerima">Kode Pos Penerima:</label>
-        <input type="text" id="kodepospenerima" readonly><br><br>
-
-        <label for="tanggal">Tanggal:</label>
-        <input type="text" id="tanggal" readonly><br><br>
-
-        <label for="berat">Berat:</label>
-        <input type="text" id="berat" readonly><br><br>
-    </form>
     
     <section id="banner" class="section-m1">
         <h4>Services</h4>
@@ -292,41 +283,149 @@
         });
     </script>
 
-    <script>
-        async function pengirimanCek(event) {
+<script>
+    document.getElementById("search-form").addEventListener("submit", function(event) {
         event.preventDefault();
-        const idPengiriman = document.getElementById("idPengiriman").value;
-        const apiUrl = `https://be-semarang-21.fadhiladha.repl.co/api/pengiriman/${idPengiriman}`;
 
+        const id = document.getElementById("id-input").value;
+
+        fetch(`https://be-semarang-21.fadhiladha.repl.co/api/pengiriman/${id}`)
+            .then(response => response.json())
+            .then(data => {
+                // Menampilkan hasil pada tabel
+                const resultTable = document.getElementById("result-table");
+                resultTable.style.display = "block";
+
+                const tbody = resultTable.querySelector("tbody");
+                console.log(data);
+                tbody.innerHTML = `
+                    <tr>
+                        <td>${data.nama}</td>
+                        <td>${data.alamat}</td>
+                        <td>${data.kota}</td>
+                        <td>${data.provinsi}</td>
+                        <td>${data.kodepos}</td>
+                        <td>${data.namapenerima}</td>
+                        <td>${data.alamatpenerima}</td>
+                        <td>${data.kotapenerima}</td>
+                        <td>${data.provinsipenerima}</td>
+                        <td>${data.kodepospenerima}</td>
+                        <td>${data.tanggal}</td>
+                        <td>${data.berat}</td>
+                    </tr>
+                `;
+            })
+            .catch(error => {
+                console.error("Terjadi kesalahan saat mengambil data dari API:", error);
+            });
+    });
+</script>
+
+<script>
+    // Fungsi untuk mengambil data dari API
+    async function fetchData() {
         try {
-            const response = await fetch(apiUrl);
-            const dataPengiriman = await response.json();
-            if (response.status === 200 && dataPengiriman) {
-                document.getElementById("nama").value = dataPengiriman.nama;
-                document.getElementById("alamat").value = dataPengiriman.alamat;
-                document.getElementById("kota").value = dataPengiriman.kota;
-                document.getElementById("provinsi").value = dataPengiriman.provinsi;
-                document.getElementById("kodepos").value = dataPengiriman.kodepos;
-                document.getElementById("namapenerima").value = dataPengiriman.namapenerima;
-                document.getElementById("alamatpenerima").value = dataPengiriman.alamatpenerima;
-                document.getElementById("kotapenerima").value = dataPengiriman.kotapenerima;
-                document.getElementById("provinsipenerima").value = dataPengiriman.provinsipenerima;
-                document.getElementById("kodepospenerima").value = dataPengiriman.kodepospenerima;
-                document.getElementById("tanggal").value = dataPengiriman.tanggal;
-                document.getElementById("berat").value = dataPengiriman.berat;
+            const response = await fetch('https://be-semarang-21.fadhiladha.repl.co/api/pengiriman/');
+            const data = await response.json();
 
-                document.getElementById("formTampilData").style.display = "block";
-            } else {
-                console.error("Data pengiriman tidak ditemukan atau terjadi kesalahan.");
-                alert("Data pengiriman tidak ditemukan atau terjadi kesalahan.");
-            }
+            const tableBody = document.querySelector('#dataPengiriman tbody');
+
+            data.forEach(item => {
+                const row = tableBody.insertRow();
+
+                // Kolom data
+                const columns = [
+                    item.nama,
+                    item.alamat,
+                    item.kota,
+                    item.provinsi,
+                    item.kodepos,
+                    item.namapenerima,
+                    item.alamatpenerima,
+                    item.kotapenerima,
+                    item.provinsipenerima,
+                    item.kodepospenerima,
+                    item.tanggal,
+                    item.berat
+                ];
+
+                columns.forEach(column => {
+                    const cell = row.insertCell();
+                    cell.textContent = column;
+                });
+            });
         } catch (error) {
-            console.error("Kesalahan saat mengambil data pengiriman:", error);
-            alert("Kesalahan saat mengambil data pengiriman.");
+            console.error('Terjadi kesalahan:', error);
         }
     }
 
-    </script>
+    // Memanggil fungsi fetchData untuk mengambil data dari API
+    fetchData();
+</script>
+
+<script>
+    let data = []; // Variabel untuk menyimpan data dari API
+
+    // Fungsi untuk mengambil data dari API
+    async function fetchData() {
+        try {
+            const response = await fetch('https://be-semarang-21.fadhiladha.repl.co/api/pengiriman/');
+            data = await response.json();
+
+            renderTable(data);
+        } catch (error) {
+            console.error('Terjadi kesalahan:', error);
+        }
+    }
+
+    // Fungsi untuk mengisi tabel dengan data
+    function renderTable(data) {
+        const tableBody = document.querySelector('#dataPengiriman tbody');
+        tableBody.innerHTML = ''; // Kosongkan isi tabel sebelum mengisi kembali
+
+        data.forEach(item => {
+            const row = tableBody.insertRow();
+
+            // Kolom data
+            const columns = [
+                item.id,
+                item.nama,
+                item.alamat,
+                item.kota,
+                item.provinsi,
+                item.kodepos,
+                item.namapenerima,
+                item.alamatpenerima,
+                item.kotapenerima,
+                item.provinsipenerima,
+                item.kodepospenerima,
+                item.tanggal,
+                item.berat
+            ];
+
+            columns.forEach(column => {
+                const cell = row.insertCell();
+                cell.textContent = column;
+            });
+        });
+    }
+
+   // Fungsi untuk mencari data berdasarkan Nama Penerima
+    function searchByName() {
+    const searchInput = document.querySelector('#searchInput').value.toLowerCase();
+    const results = data.filter(item => item.namapenerima.toLowerCase().includes(searchInput));
+
+    if (results.length > 0) {
+        renderTable(results); // Tampilkan hasil pencarian
+    } else {
+        alert('Nama tidak ditemukan');
+    }
+}
+
+    // Memanggil fungsi fetchData untuk mengambil data dari API saat halaman dimuat
+    fetchData();
+</script>
+    
 
 </body>
 </html>
