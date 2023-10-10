@@ -271,7 +271,7 @@
                 "tanggal": document.getElementById("tanggal").value,
                 "berat": parseFloat(document.getElementById("berat").value)
             };
-            fetch('http://be-semarang-21.fadhiladha.repl.co/api/pengiriman', {
+            fetch('https://be-semarang-21.fadhiladha.repl.co/api/pengiriman', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
@@ -296,7 +296,7 @@
         async function pengirimanCek(event) {
         event.preventDefault();
         const idPengiriman = document.getElementById("idPengiriman").value;
-        const apiUrl = `http://be-semarang-21.fadhiladha.repl.co/api/pengiriman/${idPengiriman}`;
+        const apiUrl = `https://be-semarang-21.fadhiladha.repl.co/api/pengiriman/${idPengiriman}`;
 
         try {
             const response = await fetch(apiUrl);
